@@ -6,7 +6,7 @@ I have tested all of them on real hardware and they should work on anything that
 to test on qemu:
 
     nasm start.S
-    qemu-system-x86_64 -hda start
+    qemu-system-x86_64 -enable-kvm -hda start
 
 to test on real hardware:
 
