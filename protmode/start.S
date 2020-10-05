@@ -30,7 +30,7 @@ lgdt [GDT_PTR]
 mov eax,0x11 ; paging disabled, protection bit enabled. bit4, the extension type is always 1
 mov cr0,eax
 
-jmp GDT_BOOT_CS-GDT:protmode ; segment 0x16 is the code segment in our gdt. we jump to change CS
+jmp GDT_BOOT_CS-GDT:protmode ; jump using our new code segment from the gdt to set cs
 
 [BITS 32]
 protmode:
