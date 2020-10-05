@@ -38,6 +38,7 @@ protmode:
 mov ax,GDT_BOOT_DS-GDT
 mov ds,ax
 mov ss,ax
+mov es,ax
 mov esp,0x90000 ; tmp stack
 
 mov edi,0xb8000
