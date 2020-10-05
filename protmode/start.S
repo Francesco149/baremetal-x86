@@ -81,15 +81,14 @@ dd GDT ; offset
 
 align 16
 GDT:
+GDT_NULL: dq 0 ; required on some platforms, disallow use of segment 0
 
 ; base = 0x00000000
 ; limit = 0xFFFFF * 4KB granularity = full 4GB address space
 ; flags = 0xC = 0b1100 (4KB granularity, 32bit)
 ; access byte = 0x92 = 10010010 (present, ring 0, code/data segment, writable)
-GDT_NULL: dq 0 ; required on some platforms, disallow use of segment 0
 GDT_BOOT_DS: dq 0x00CF92000000FFFF
 GDT_BOOT_CS: dq 0x00CF9A000000FFFF ; same as DS but with executable set in access byte
-;GDT_CS64: dq 0x00209A0000000000 ; same as above but 64-bit
 
 GDT_END:
 
