@@ -72,7 +72,7 @@ movaps xmm2,xmm0
 mov ax,50
 cvtsi2ss xmm2,eax
 mulss xmm2,xmm0
-; xmm2 (pulsating_offset) = int16(sin(timer/1000.0) * 50.0)
+; xmm2 (pulsating_offset) = sin(timer/1000.0) * 50.0
 
 xor di,di ; index into vga buf
 mov cx,480
