@@ -24,7 +24,7 @@ xor ax,ax
 mov ds,ax
 
 ; load global descriptor table with the various segments.
-; in real mode, segments are an offset into the gdt entries
+; in protected and long mode, segments are an offset into the gdt entries
 lgdt [GDT_PTR]
 
 mov eax,0x11 ; paging disabled, protection bit enabled. bit4, the extension type is always 1
