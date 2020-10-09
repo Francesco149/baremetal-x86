@@ -246,7 +246,6 @@ ret
 
 shademul: dd 4.5
 halfscreensz: dd 320.0
-modulo_scale: dd 65535.0
 
 dither:
 db 11111111b
