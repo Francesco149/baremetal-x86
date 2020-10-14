@@ -207,11 +207,6 @@ shrd ecx,edx,cl  ; this is used to do a 64-bit shift. it shift cl bits into ecx 
 ; edx = number of pages, rounded to 512 entries
 mov edx,ecx
 
-xor ecx,ecx
-xor edx,edx
-inc ecx
-inc edx
-
 ; round up to chunks of 512 entries to maintain the 4KiB alignment
 add edx,0x1FF
 and edx,~0x1FF
