@@ -271,10 +271,9 @@ ret
 ;   edx = number of entries in this table (rounded up to 512)
 do_pages:
 ; num of pages in this table, rounded up
-; this is equivalent to rounding up to 512 entries, dividing by 512 and rounding up again
-add edx,0x3FFFF
-and edx,~0x3FFFF
 shr edx,9
+add edx,0x1FF
+and edx,~0x1FF
 
 ; num of pages in this table, not rounded
 add ecx,0x1FF
