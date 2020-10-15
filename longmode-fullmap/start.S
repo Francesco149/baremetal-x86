@@ -215,7 +215,7 @@ and edx,~0x1FF
 mov ebp,edi ; store PD pointer for later
 push ecx
 push edx
-mov eax,0x87 ; R/W, U/S, P, PS
+mov eax,0x83 ; R/W, P, PS
 xor ebx,ebx
 pdloop:
 stosd
@@ -284,7 +284,7 @@ push ecx
 push edx
 mov eax,ebp ; start at last table
 mov ebp,edi ; save address of this table for later
-or eax,7 ; R/W, U/S, P
+or eax,3 ; R/W, P
 pages_loop:
 stosd
 xchg eax,ebx

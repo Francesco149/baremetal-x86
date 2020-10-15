@@ -118,7 +118,7 @@ mov edi,0x100000 ; first 1MiB of mem is mostly reserved for bios, so let's put t
 ;       see longmode-fullmap for more compact code.
 
 ; PD: 2 MiB pages
-mov eax,0x87
+mov eax,0x83
 xor edx,edx
 mov [edi],eax
 mov [edi+4],edx
@@ -130,7 +130,7 @@ xor eax,eax
 rep stosd
 
 ; PDP: 1 GiB pages
-mov eax,0x100007
+mov eax,0x100003
 mov [edi],eax
 mov [edi+4],edx
 add edi,8
@@ -140,7 +140,7 @@ xor eax,eax
 rep stosd
 
 ; PML4: 512 GiB pages
-mov eax,0x101007
+mov eax,0x101003
 mov [edi],eax
 mov [edi+4],edx
 add edi,8
