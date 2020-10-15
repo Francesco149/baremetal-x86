@@ -14,7 +14,7 @@ int 0x10
 ; invalid handler.
 cli
 
-; enable A20 line, this enables the 21th address bit
+; enable A20 line, this enables bit number 20 in the address
 in al,0x92
 or al,2
 out 0x92,al

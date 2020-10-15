@@ -92,7 +92,7 @@ query_mem_done:
 ; invalid handler.
 cli
 
-; enable A20 line, this enables the 21th address bit
+; enable A20 line, this enables bit number 20 in the address
 in al,0x92
 or al,2
 out 0x92,al
@@ -198,7 +198,7 @@ mov edx,[MEM_TOTAL+4]
 add ecx,0x1FFFFF ; round up by adding 2MiB - 1
 adc edx,0
 mov cl,21        ; divide by 2MiB by shifting right by 21 bits (2<<21 = 2 MiB)
-shrd ecx,edx,cl  ; this is used to do a 64-bit shift. it shift cl bits into ecx from edx
+shrd ecx,edx,cl  ; this is used to do a 64-bit shift. it shifts cl bits into ecx from edx
 
 ; we could also shift edx here, however we know for sure that this number will be 32-bits because
 ; the biggest address we can have is 48-bits and at 2MiB pages that's a max of 2^28 pages
